@@ -1,7 +1,7 @@
 <template>
   <div>
     <i-grid>
-    <i-grid-item v-for="grid in grids" :key="grid">
+    <i-grid-item @click="goType(grid)" v-for="grid in grids" :key="grid">
         <i-grid-icon>
             <image :src="grid.image" />
         </i-grid-icon>
@@ -31,15 +31,20 @@ export default {
         {title:"饮料",image:"/static/images/4.png"},
       ],
       top:[
-        {name:"店面1",address:"地址1",image:"https://i.loli.net/2017/08/21/599a521472424.jpg",remark:"介绍1"},
-        {name:"店面2",address:"地址2",image:"https://i.loli.net/2017/08/21/599a521472424.jpg",remark:"介绍2"},
-        {name:"店面3",address:"地址3",image:"https://i.loli.net/2017/08/21/599a521472424.jpg",remark:"介绍3"},
-        {name:"店面4",address:"地址4",image:"https://i.loli.net/2017/08/21/599a521472424.jpg",remark:"介绍4"}
+        {name:"小重庆",address:"武昌区团结大道318号",image:"cloud://ll-1zrro.6c6c-ll-1zrro-1301063015/小重庆.jpg",remark:"环境舒适宜人，味道可口"},
+        {name:"秀玉红茶坊",address:"武昌区徐东大街18号销品茂4F层",image:"cloud://ll-1zrro.6c6c-ll-1zrro-1301063015/秀玉红茶坊.jpg",remark:"品种齐全，服务良好"},
+        {name:"一点点",address:"友谊大道三角花园6号地块C2-2",image:"cloud://ll-1zrro.6c6c-ll-1zrro-1301063015/一点点.jpg",remark:"奶茶很好喝"},
+        {name:"仟吉",address:"武昌区友谊大道396号国际城福客茂1层",image:"cloud://ll-1zrro.6c6c-ll-1zrro-1301063015/仟吉.jpg",remark:"人气很旺的面包店"}
       ]
     }
   },
 
   methods: {
+    goType(type){
+       console.log(type) 
+       let url = '../list/main?type=' + type.title
+       mpvue.navigateTo({ url })
+    }
   },
 
   created () {
