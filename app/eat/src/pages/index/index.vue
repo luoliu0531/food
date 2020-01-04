@@ -31,7 +31,7 @@
 export default {
   data () {
     return {
-      title_name: "热门",
+      title_name: "热门 ",
       grids:[
         {title:"中餐",image:"/static/images/1.png"},
         {title:"西餐",image:"/static/images/2.png"},
