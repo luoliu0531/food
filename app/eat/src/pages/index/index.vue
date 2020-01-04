@@ -1,29 +1,11 @@
 <template>
   <div>
     <i-grid>
-    <i-grid-item>
+    <i-grid-item v-for="grid in grids" :key="grid">
         <i-grid-icon>
-            <image src="/static/images/1.png" />
+            <image :src="grid.image" />
         </i-grid-icon>
-        <i-grid-label>中餐</i-grid-label>
-    </i-grid-item>
-    <i-grid-item>
-        <i-grid-icon>
-            <image src="/static/images/2.png" />
-        </i-grid-icon>
-        <i-grid-label>西餐</i-grid-label>
-    </i-grid-item>
-    <i-grid-item>
-        <i-grid-icon>
-            <image src="/static/images/3.png" />
-        </i-grid-icon>
-        <i-grid-label>小吃</i-grid-label>
-    </i-grid-item>
-    <i-grid-item>
-        <i-grid-icon>
-            <image src="/static/images/4.png" />
-        </i-grid-icon>
-        <i-grid-label>饮料</i-grid-label>
+        <i-grid-label>{{grid.title}}</i-grid-label>
     </i-grid-item>
   </i-grid>
   <i-panel :title=" title_name">
@@ -52,9 +34,13 @@ export default {
       title_name: "热门",
       grids:[
         {title:"中餐",image:"/static/images/1.png"},
+        
         {title:"西餐",image:"/static/images/2.png"},
         {title:"小吃",image:"/static/images/3.png"},
         {title:"饮料",image:"/static/images/4.png"},
+      ],
+      top:[
+        {name:"店面1",address:}
       ]
     }
   },
